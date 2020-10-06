@@ -4,7 +4,9 @@ import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
+import com.squareup.picasso.Picasso
 
 
 class FeedItemRecyclerViewAdapter(
@@ -21,6 +23,8 @@ class FeedItemRecyclerViewAdapter(
         val item = values[position]
         holder.titleView.text = item.title
         holder.bodyView.text = item.body
+
+        item.images?.forEach { Picasso.get().load(it).into(holder.imageView); }
     }
 
     override fun getItemCount(): Int = values.size
@@ -28,6 +32,7 @@ class FeedItemRecyclerViewAdapter(
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val titleView: TextView = view.findViewById(R.id.title)
         val bodyView: TextView = view.findViewById(R.id.body)
+        val imageView: ImageView = view.findViewById(R.id.imageView)
 
         override fun toString(): String {
             return super.toString() + " '" + bodyView.text + "'"

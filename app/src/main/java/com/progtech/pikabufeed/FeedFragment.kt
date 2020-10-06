@@ -31,7 +31,11 @@ class FeedFragment : Fragment() {
 
         feeds.enqueue(object : Callback<List<FeedItem>?> {
             override fun onResponse(call: Call<List<FeedItem>?>, response: Response<List<FeedItem>?>) {
-                Log.d("Call","response " + response.body()?.size.toString())
+                Log.d("Call", "response " + response.body()?.size.toString())
+
+                response.body()?.forEach {
+                    it.images?.forEach { Log.d("Item", it) }
+                }
 
                 // Set the adapter
                 if (view is RecyclerView) {
