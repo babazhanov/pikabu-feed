@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.ViewPager
 
@@ -17,6 +18,7 @@ class FeedItemRecyclerViewAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
                 .inflate(R.layout.fragment_feed_item, parent, false)
+
         return ViewHolder(view)
     }
 
@@ -30,6 +32,9 @@ class FeedItemRecyclerViewAdapter(
             holder.viewPager.adapter = adapter
         } else holder.viewPager.visibility = View.GONE
 
+        holder.itemView.setOnClickListener {
+            Toast.makeText(ctx, "${item.id}", Toast.LENGTH_SHORT).show()
+        }
     }
 
     override fun getItemCount(): Int = values.size
