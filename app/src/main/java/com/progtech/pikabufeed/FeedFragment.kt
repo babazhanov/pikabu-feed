@@ -42,7 +42,7 @@ class FeedFragment : Fragment() {
                     with(view) {
                         val respBody = response.body()
                         respBody?.let {
-                            adapter = FeedItemRecyclerViewAdapter(respBody)
+                            adapter = FeedItemRecyclerViewAdapter(context, respBody)
                         }
 
                     }
