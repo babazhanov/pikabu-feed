@@ -1,4 +1,4 @@
-package com.progtech.pikabufeed
+package com.progtech.pikabufeed.models
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

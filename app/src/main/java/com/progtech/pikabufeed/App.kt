@@ -2,6 +2,7 @@ package com.progtech.pikabufeed
 
 import android.app.Application
 import androidx.room.Room
+import com.progtech.pikabufeed.models.AppDatabase
 
 
 class App : Application() {

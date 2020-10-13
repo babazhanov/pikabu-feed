@@ -5,6 +5,8 @@ import androidx.annotation.StringRes
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
+import com.progtech.pikabufeed.feed.FeedFragment
+import com.progtech.pikabufeed.saved.SavedFragment
 
 /**
  * A [FragmentPagerAdapter] that returns a fragment corresponding to
